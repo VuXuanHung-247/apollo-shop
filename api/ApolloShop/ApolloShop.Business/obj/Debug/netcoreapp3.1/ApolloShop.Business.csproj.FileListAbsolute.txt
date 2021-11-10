@@ -1,0 +1,12 @@
+D:\Ky1-Năm-Cuối\CNW-NC\ApolloShop\api\ApolloShop\ApolloShop.Business\bin\Debug\netcoreapp3.1\ApolloShop.Business.deps.json
+D:\Ky1-Năm-Cuối\CNW-NC\ApolloShop\api\ApolloShop\ApolloShop.Business\bin\Debug\netcoreapp3.1\ApolloShop.Business.dll
+D:\Ky1-Năm-Cuối\CNW-NC\ApolloShop\api\ApolloShop\ApolloShop.Business\bin\Debug\netcoreapp3.1\ApolloShop.Business.pdb
+D:\Ky1-Năm-Cuối\CNW-NC\ApolloShop\api\ApolloShop\ApolloShop.Business\bin\Debug\netcoreapp3.1\ApolloShop.Core.dll
+D:\Ky1-Năm-Cuối\CNW-NC\ApolloShop\api\ApolloShop\ApolloShop.Business\bin\Debug\netcoreapp3.1\ApolloShop.Core.pdb
+D:\Ky1-Năm-Cuối\CNW-NC\ApolloShop\api\ApolloShop\ApolloShop.Business\obj\Debug\netcoreapp3.1\ApolloShop.Business.csproj.AssemblyReference.cache
+D:\Ky1-Năm-Cuối\CNW-NC\ApolloShop\api\ApolloShop\ApolloShop.Business\obj\Debug\netcoreapp3.1\ApolloShop.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ky1-Năm-Cuối\CNW-NC\ApolloShop\api\ApolloShop\ApolloShop.Business\obj\Debug\netcoreapp3.1\ApolloShop.Business.AssemblyInfoInputs.cache
+D:\Ky1-Năm-Cuối\CNW-NC\ApolloShop\api\ApolloShop\ApolloShop.Business\obj\Debug\netcoreapp3.1\ApolloShop.Business.AssemblyInfo.cs
+D:\Ky1-Năm-Cuối\CNW-NC\ApolloShop\api\ApolloShop\ApolloShop.Business\obj\Debug\netcoreapp3.1\ApolloShop.Business.csproj.CoreCompileInputs.cache
+D:\Ky1-Năm-Cuối\CNW-NC\ApolloShop\api\ApolloShop\ApolloShop.Business\obj\Debug\netcoreapp3.1\ApolloShop.Business.dll
+D:\Ky1-Năm-Cuối\CNW-NC\ApolloShop\api\ApolloShop\ApolloShop.Business\obj\Debug\netcoreapp3.1\ApolloShop.Business.pdb

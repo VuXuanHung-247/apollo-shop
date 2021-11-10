@@ -43,34 +43,53 @@ CREATE TABLE Product (
 	FOREIGN KEY (BrandId) REFERENCES Brand (BrandId) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (DiscountId) REFERENCES Discount (DiscountId) ON DELETE CASCADE ON UPDATE CASCADE
 );
-CREATE TABLE UserLogin (
-	UserLoginId INT IDENTITY (1, 1) PRIMARY KEY,
-	UserLoginType INT NOT NULL,-- 1 - khách hàng, 2 - admin
+CREATE TABLE Users (
+	UsersId INT IDENTITY (1, 1) PRIMARY KEY,
+	UserType INT NOT NULL,-- 1 - khách hàng, 2 - admin
 	UserName NVARCHAR (255) NOT NULL,
 	PassWord NVARCHAR (500) NOT NULL,
 	CreateDate DateTime2(7)
 );
+CREATE TABLE Permision(
+	PermisionId INT IDENTITY (1, 1) PRIMARY KEY,
+	PermisionName NVARCHAR (255) NOT NULL
+)
+CREATE TABLE UsersPermision (
+	UsersPermisionId INT IDENTITY (1, 1) PRIMARY KEY,
+	PermisionId INT,
+	UsersId INT,
+	Allowed INT,
+	FOREIGN KEY (UsersId) REFERENCES Users (UsersId) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (PermisionId) REFERENCES Permision (PermisionId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE PermisionDetail (
+	PermisionDetailId INT IDENTITY (1, 1) PRIMARY KEY,
+	PermisionId INT,
+	ActionCode NVARCHAR(50),
+	CheckAction INT,
+	FOREIGN KEY (PermisionId) REFERENCES Permision (PermisionId) ON DELETE CASCADE ON UPDATE CASCADE
+);
 CREATE TABLE Customer (
 	CustomerId INT IDENTITY (1, 1) PRIMARY KEY,
-	UserLoginId INT ,
+	UsersId INT ,
 	CustomerName NVARCHAR (255) NOT NULL,
 	Phone NVARCHAR (255) NOT NULL,
 	Email NVARCHAR (255) NOT NULL,
 	Gender bit,
 	DayOfBirth DateTime2(7),
 	Address NVARCHAR (500),
-	FOREIGN KEY (UserLoginId) REFERENCES UserLogin (UserLoginId) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	FOREIGN KEY (UsersId) REFERENCES Users (UsersId) ON DELETE NO ACTION ON UPDATE NO ACTION,
 );
 CREATE TABLE Employee (
 	EmployeeId INT IDENTITY (1, 1) PRIMARY KEY,
-	UserLoginId INT NOT NULL,
+	UsersId INT NOT NULL,
 	EmployeeName NVARCHAR (255) NOT NULL,
 	Phone NVARCHAR (255),
 	Email NVARCHAR (255),
 	DayOfBirth DateTime2(7),
 	Gender bit,
 	Address NVARCHAR (255)
-	FOREIGN KEY (UserLoginId) REFERENCES UserLogin (UserLoginId) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	FOREIGN KEY (UsersId) REFERENCES Users (UsersId) ON DELETE NO ACTION ON UPDATE NO ACTION,
 );
 CREATE TABLE ImportBill(
 	ImportBillId INT IDENTITY (1, 1) PRIMARY KEY,
@@ -125,17 +144,3 @@ CREATE TABLE SystemLog (
 	CreateDate DateTime2(7),
 	UpdateDate DateTime2(7)
 );
---go
---CREATE PROCEDURE Proc_GetAccount(@username NVARCHAR(255))
---AS
---BEGIN
---SELECT *
---FROM TaiKhoanKhachHang
---WHERE UserName = @username
---END
---GO
-
---EXEC Proc_GetAccount ''or 1=1--'
-
---select * from TaiKhoanKhachHang
---where UserName = ''or 1=1--' and PassWord = ''admin' or 1=1--'
